@@ -38,6 +38,8 @@ export default function App() {
       value: enteredGoal,
     }
     ]);
+    // Clear the field after adding:
+
     // setEnteredGoal('');
   };
 
@@ -66,6 +68,12 @@ export default function App() {
         />
       </View>
       <View>
+
+        {/* FlatList takes a data prop which is expected to be an array of objects for "data" prop.
+            renderItem func will be passed the itemData (each index of data array).
+            you will need to define a key to get passed into each iterated item
+            It is more performant than ScrollView when listing an unknown amount of items.
+         */}
         <FlatList
           data={courseGoals}
           renderItem={renderGoalItem}
